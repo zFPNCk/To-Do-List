@@ -5,9 +5,10 @@ import functions
 todos = functions.get_todos()
 
 def add_todo():
-    todo = st.session_state["new_todo"] + "\n"
+    todo = st.session_state["new_todo"]
     todos.append(todo)
-    functions.write_todos(todos)
+    text = "\n".join(todos)
+    functions.write_todos(text)
 
 st.title("My Todo App")
 st.write("This app is to increase your productivity.")
